@@ -1,11 +1,21 @@
 export const increment = (id) => {
-    const span = document.getElementById(`c-${id}`);
-    span.innerHTML = parseInt(span.innerHTML) + 1;
+    // counter
+    const counter = document.getElementById(`c-${id}`);
+    counter.innerHTML = parseInt(counter.innerHTML) + 1;
+    // price
+    const price = document.getElementById(`p-${id}`);
+    const priceValue = price.dataset.price
+    price.innerHTML = Math.round(parseInt(counter.innerHTML) * priceValue);
 }
 
 export const decrement = (id) => {
-    const span = document.getElementById(`c-${id}`);
-    if (span.innerHTML > 1){
-        span.innerHTML = parseInt(span.innerHTML) - 1;
+    // counter
+    const counter = document.getElementById(`c-${id}`);
+    if (counter.innerHTML > 1){
+        counter.innerHTML = parseInt(counter.innerHTML) - 1;
     }
+    // price 
+    const price = document.getElementById(`p-${id}`);
+    const priceValue = parseInt(price.dataset.price);
+    price.innerHTML = Math.round(parseInt(counter.innerHTML) * priceValue);
 }

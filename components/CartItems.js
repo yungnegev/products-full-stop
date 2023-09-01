@@ -44,7 +44,13 @@ export const generateProducts = () => {
                     </div>
                     <div class="price-container">
                         <div class="price">
-                            <span class="price-value" style=${product.price * product.innitialQuanitity > 50000 ? `font-size:16px !important` : ''}>${product.price * product.innitialQuanitity}</span>
+                            <span class="price-value" 
+                                  id=p-${product.id} 
+                                  data-price=${product.price}
+                                  style=${product.price * product.innitialQuanitity > 50000 ? `font-size:16px` : ''}  
+                                  >
+                                ${product.price * product.innitialQuanitity}
+                            </span>
                             <span class="price-currency">сом</span>
                         </div>
                         <p class="no-discount-price">${product.noDiscount}</p>
