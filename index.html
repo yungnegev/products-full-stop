@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товары и Точка</title>
+    <base href=".">
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="main.js" defer></script>
 </head>
@@ -32,6 +33,7 @@
                 <div class="cart-container">
                     <button><img src="./assets/icons/cart.svg" alt="cart-icon"></button>
                     <span>Корзина</span>
+                    <span class="cart-ammount">3</span>
                 </div>
             </div>
         </header>
@@ -50,51 +52,7 @@
                             </button>
                         </div>
                         <div class="cart-items">
-                            <div class="cart-item">
-                                <div class="cart-item__left">
-                                    <div class="image-with-checkbox">
-                                        <button type="button" class="checkbox">
-                                            <img src="./assets/icons/checkbox.svg" alt="checkbox-icon">
-                                        </button>
-                                        <img src="./assets/images/prod1.png" alt="item-image">
-                                    </div>
-                                    <div class="cart-item__description">
-                                        <p>Футболка UZcotton мужская</p>
-                                        <div class="description-attributes">
-                                            <span>Цвет: белый</span>
-                                            <span>Размер: 56</span>
-                                        </div>
-                                        <p class="description-location">Коледино WB</p>
-                                        <div class="description-company">
-                                            <p>OOO Вайлдберриз</p>
-                                            <button>
-                                                <img src="./assets/icons/info.svg" alt="info">
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cart-item__right">
-                                    <div class="counter-container">
-                                        <div class="counter">
-                                            <button>−</button>
-                                            <span>1</span>
-                                            <button>+</button>
-                                        </div>
-                                        <span class="remaining-stock">Осталось 2 шт.</span>
-                                        <div class="icon-tray">
-                                            <img src="./assets/icons/heart.svg" alt="like">
-                                            <img src="./assets/icons/bin.svg" alt="bin">
-                                        </div>
-                                    </div>
-                                    <div class="price-container">
-                                        <div class="price">
-                                            <span class="price-value">522</span>
-                                            <span class="price-currency">сом</span>
-                                        </div>
-                                        <p class="no-discount-price">1051 сом</p>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>  
                     </div>
                 </section>
@@ -108,6 +66,6 @@
         <footer class="footer">
             <span>© 2022  ООО «Товары и точка»</span>
         </footer>
-    </div>
+    </div>    
 </body>
 </html>
