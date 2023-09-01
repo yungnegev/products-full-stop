@@ -53,3 +53,11 @@ export const generateProducts = () => {
             </div>`;
     }).join(''))
 }
+
+export const hideProducts = () => {
+    cartItems.style.display = 'none';
+}
+
+export const showProducts = () => {
+    cartItems.style.display = 'flex';
+}
