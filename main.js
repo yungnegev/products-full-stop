@@ -1,5 +1,5 @@
-import { generateProducts, hideProducts, showProducts } from './components/CartItems.js';
-import { decrement, increment } from './utils/counterOperations.js';
+import { generateProducts, hideProducts, showProducts } from './components/CartItem.js';
+import { decrement, increment } from './lib/counterOperations.js';
 
 const attachEventListeners = () => {
     const decrementBtns = document.querySelectorAll('.counter button:first-child');

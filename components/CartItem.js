@@ -3,7 +3,6 @@ import { products } from '../data/data.js';
 const cartItems = document.querySelector('.cart-items');
 
 export const generateProducts = () => {
-
     return (cartItems.innerHTML = products.map((product) => {
         return `
             <div class="cart-item" id='cart-item-${product.id}'>
