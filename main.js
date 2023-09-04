@@ -1,18 +1,30 @@
 import { generateProducts, hideProducts, showProducts } from './components/CartItem.js';
+import { generateMissing, hideMissing, showMissing } from './components/MissingItem.js';
 import { decrement, increment } from './lib/counterOperations.js';
 
 const attachEventListeners = () => {
     const decrementBtns = document.querySelectorAll('.counter button:first-child');
     const incrementBtns = document.querySelectorAll('.counter button:last-child');
-    const toggleBtn = document.querySelector('#toggle-cart');
+    const toggleCartBtn = document.querySelector('#toggle-cart');
+    const toggleMissingBtn = document.querySelector('#toggle-missing')
 
-    toggleBtn.addEventListener('click', (e) => {
-        if (toggleBtn.value === 'open') {
+    toggleCartBtn.addEventListener('click', (e) => {
+        if (toggleCartBtn.value === 'open') {
             hideProducts();
-            toggleBtn.value = 'closed';
+            toggleCartBtn.value = 'closed';
         } else {
             showProducts();
-            toggleBtn.value = 'open';
+            toggleCartBtn.value = 'open';
+        }
+    })
+
+    toggleMissingBtn.addEventListener('click', (e) => {
+        if (toggleMissingBtn.value === 'open') {
+            hideMissing();
+            toggleMissingBtn.value = 'closed';
+        } else {
+            showMissing();
+            toggleMissingBtn.value = 'open';
         }
     })
 
@@ -33,6 +45,7 @@ const attachEventListeners = () => {
 }
 
 generateProducts()
+generateMissing()
 attachEventListeners();
 
 
