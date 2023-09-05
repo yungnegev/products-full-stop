@@ -8,7 +8,7 @@ export const generateProducts = () => {
             <div class="cart-item" id='cart-item-${product.id}'>
                 <div class="cart-item__left">
                     <div class="image-with-checkbox">
-                        <button type="button" class="checkbox">
+                        <button type="button" class="cart-checkbox" value="on">
                             <img src="./assets/icons/checkbox.svg" alt="checkbox-icon">
                         </button>
                         <img src=${product.img} alt="item-image">
