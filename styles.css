@@ -1,6 +1,7 @@
 :root {
     --color-primary: #6725a8;
     --color-text-gray: #A0A0A4;
+    --color-text-gray-2: #9797AF;
     --color-orange: #FF3B30;
     --color-magenta: #CB11AB;
     --color-cart-ammount: #f45123;
@@ -297,7 +298,7 @@ button {
 }
 
 .description-location {
-    color: var(--color-text-gray);
+    color: var(--color-text-gray-2);
     font-size: 13px;
     line-height: 16px;
     margin-bottom: 4px;
@@ -305,7 +306,7 @@ button {
 }
 
 .description-company {
-    color: var(--color-text-gray);
+    color: var(--color-text-gray-2);
     font-size: 13px;
     display: flex;
     gap: 6px;
@@ -459,6 +460,7 @@ button {
     gap: 4px;
     line-height: 24px;
     cursor: pointer;
+    color: var(--color-text-gray-2);
 }
 
 .missing-item__attributes {
@@ -491,6 +493,10 @@ button {
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+.action-card:first-child {
+    padding-bottom: 22px;
 }
 
 .action-card__header {
@@ -545,7 +551,7 @@ button {
 }
 
 .card-free-delivery {
-    margin-top: 8px;
+    margin-top: 6px;
     display: flex;
     gap: 8px;
     align-items: center;
@@ -554,7 +560,34 @@ button {
 }
 
 .card-free-delivery div:nth-child(2) {
-    margin-top: -8px;
+    margin-top: -4px;
+}
+
+.grey-bg-rounded {
+    display: flex;
+    width: 32px;
+    height: 24px;
+    justify-content: center;
+    align-items: center; 
+    background-color: var(--color-page-background);
+    border-radius: 4px;
+}
+
+.payment-card-display {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.payment-card-display span {
+    margin-left: 4px;
+}
+
+.text-gray-sm {
+    font-size: 13px; 
+    color: var(--color-text-gray-2);
+    line-height: 16px;
 }
 
 /* Checkout */
@@ -595,7 +628,7 @@ button {
     letter-spacing: -0.28px;
 }
 
-.checkout-price{
+.checkout-price {
     font-size: 24px;
     font-weight: 700;
     letter-spacing: -0.28px;
