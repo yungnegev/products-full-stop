@@ -1,6 +1,7 @@
 import { generateProducts, hideProducts, showProducts } from './components/CartItem.js';
 import { generateMissing, hideMissing, showMissing } from './components/MissingItem.js';
 import { decrement, increment } from './lib/counterOperations.js';
+import { updateTotals } from './lib/updateTotals.js';
 import { validateInputs } from './lib/formValidation.js';
 
 const attachEventListeners = () => {
@@ -34,6 +35,7 @@ const attachEventListeners = () => {
         btn.addEventListener('click', (e) => {
             const id = btn.dataset.id;
             decrement(id);
+            updateTotals();
         })
     });
 
@@ -41,6 +43,7 @@ const attachEventListeners = () => {
         btn.addEventListener('click', (e) => {
             const id = btn.dataset.id;
             increment(id);
+            updateTotals();
         })
     })
 
