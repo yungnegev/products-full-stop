@@ -590,6 +590,63 @@ button {
     line-height: 16px;
 }
 
+.form-container form {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+.field-holder {
+    position: relative;
+    margin-bottom: 14px;
+}
+
+.field-holder input {
+    border: 0;
+    border-bottom: solid 1px var(--color-text-gray-2);
+    outline: none;
+    padding: 2px 0px;
+    font-size: 16px;
+    width: 100%;
+    font-weight: 400;
+}
+
+.field-holder label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--color-text-gray-2);
+    transition: all 0.2s ease-in-out;
+}
+
+.field-holder input:focus + label,
+.field-holder input:not(:placeholder-shown) + label {
+    top: -20px;
+    left: 0;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.field-holder:nth-child(1),
+.field-holder:nth-child(2) {
+    width: 338px;
+}
+
+.form-error {
+    color: var(--color-orange);
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: -4px;
+}
+
+.input-error {
+    border-bottom: solid 1px var(--color-orange) !important;
+    color: var(--color-orange) !important;
+}
+
 /* Checkout */
 
 .main-checkout {

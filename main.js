@@ -1,12 +1,14 @@
 import { generateProducts, hideProducts, showProducts } from './components/CartItem.js';
 import { generateMissing, hideMissing, showMissing } from './components/MissingItem.js';
 import { decrement, increment } from './lib/counterOperations.js';
+import { validateInputs } from './lib/formValidation.js';
 
 const attachEventListeners = () => {
     const decrementBtns = document.querySelectorAll('.counter button:first-child');
     const incrementBtns = document.querySelectorAll('.counter button:last-child');
     const toggleCartBtn = document.querySelector('#toggle-cart');
     const toggleMissingBtn = document.querySelector('#toggle-missing')
+    const orderBtn = document.querySelector('#order');
 
     toggleCartBtn.addEventListener('click', (e) => {
         if (toggleCartBtn.value === 'open') {
@@ -40,6 +42,10 @@ const attachEventListeners = () => {
             const id = btn.dataset.id;
             increment(id);
         })
+    })
+
+    orderBtn.addEventListener('click', (e) => {
+        validateInputs();
     })
 
 }
