@@ -32,7 +32,7 @@ export const products = [
     },
     {
         id: 3,
-        title: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell',
+        title: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, <br> Faber-Castell',
         price: 247,
         noDiscount: '950 сом',
         quantityRemaining: 2,
@@ -43,4 +43,29 @@ export const products = [
         producer: 'OOO Вайлдберриз',
         innitialQuanitity: 2,
     },
+]
+
+
+export const missingProducts = [
+    {
+        id: 1,
+        title: 'Футболка UZcotton мужская',
+        img: img1,
+        color: 'Белый',
+        size: '58',
+    },
+    {
+        id: 2,
+        title: 'Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe',
+        img: img2,
+        color: 'прозрачный',
+        size: null,
+    },
+    {
+        id: 3,
+        title: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell',
+        img: img3,
+        color: null,
+        size: null,
+    }
 ]
