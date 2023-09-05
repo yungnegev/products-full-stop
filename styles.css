@@ -595,11 +595,12 @@ button {
     gap: 24px;
     flex-wrap: wrap;
     margin-top: 22px;
+    margin-bottom: 2px;
 }
 
 .field-holder {
     position: relative;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 
 .field-holder input {
