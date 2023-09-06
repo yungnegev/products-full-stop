@@ -5,6 +5,7 @@ import { updateTotals, updateTotalBtn, updateHeaderCart } from './lib/updateTota
 import { validateInputs } from './lib/formValidation.js';
 import { toggleCheckbox, toggleArrow } from './lib/checkboxToggle.js';
 import { updateSectionHeading, toggleSeparatorDiv } from './lib/minimizeSection.js';
+import { updateSelectAllCheckbox } from './lib/updateSelectAllCheckbox.js';
 
 const attachEventListeners = () => {
     const decrementBtns = document.querySelectorAll('.counter button:first-child');
@@ -14,6 +15,7 @@ const attachEventListeners = () => {
     const orderBtn = document.querySelector('#order');
     const paymentCheckbox = document.querySelector('#checkbox-instantpay');
     const cartItemsCheckboxes = document.querySelectorAll('.cart-checkbox');
+    const selectAllCheckbox = document.querySelector('#select-all-products');
 
     toggleCartBtn.addEventListener('click', (e) => {
         if (toggleCartBtn.value === 'open') {
@@ -75,6 +77,20 @@ const attachEventListeners = () => {
             updateHeaderCart();
             updateTotals();
             updateTotalBtn(isBtnToggled);
+            updateSelectAllCheckbox(cartItemsCheckboxes, selectAllCheckbox);
+        })
+    });
+
+    selectAllCheckbox.addEventListener('click', (e) => {
+        cartItemsCheckboxes.forEach((checkbox) => {
+            if (checkbox.value === 'off') {
+                toggleCheckbox(checkbox);
+                const isBtnToggled = paymentCheckbox.value === 'on';
+                updateHeaderCart();
+                updateTotals();
+                updateTotalBtn(isBtnToggled);
+                updateSelectAllCheckbox(cartItemsCheckboxes, selectAllCheckbox);
+            }
         })
     });
 }
