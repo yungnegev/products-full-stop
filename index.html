@@ -9,7 +9,7 @@
     <script type="module" src="main.js" defer></script>
 </head>
 <body>
-    <div class="app">
+    <div id="app">
         <header class="navbar">
             <div class="navbar-items__left">
                 <div class="menu-container">
@@ -125,12 +125,12 @@
                     <section class="action-card">
                         <div class="action-card__header">
                             <h2>Способ оплаты</h2>
-                            <button>Изменить</button>
+                            <button type="button" id="open-payment-modal-card">Изменить</button>
                         </div>
                         <div>
                             <div class="payment-card-display">
                                 <div class="grey-bg-rounded">
-                                    <img src="./assets/icons/mir.svg" alt="mir">
+                                    <img src="./assets/icons/mir.svg" alt="mir" class="card-icon">
                                 </div>
                                 <div class="card-number">1234 56•• •••• 1234</div>
                                 <span>01/30</span>
@@ -221,15 +221,15 @@
                     <div class="checkout-payment">
                         <div class="checkout__header">
                             <h2>Оплата картой</h2>
-                            <button type="button" class="checkout-delivery__button">
+                            <button type="button" class="checkout-delivery__button" id="open-payment-modal-checkout">
                                 <img src="./assets/icons/pencil.svg" alt="pencil-icon">
                             </button>
                         </div>
                         <div class="card-choice">
                             <div class="grey-bg-rounded">
-                                <img src="./assets/icons/mir.svg" alt="mir-pay">
+                                <img src="./assets/icons/mir.svg" alt="mir-pay" class="card-icon">
                             </div>
-                            <div>1234 12•• •••• 1234</div>
+                            <div class="card-number">1234 12•• •••• 1234</div>
                         </div>
                         <div class="checkout-payment__modal">
                             <div class="instant-pay">

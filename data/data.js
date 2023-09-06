@@ -69,3 +69,30 @@ export const missingProducts = [
         size: null,
     }
 ]
+
+export const cards = [
+    {
+        id: 1,
+        number: '1234 12•• •••• 1234',
+        icon: '../assets/icons/mir.svg',
+        default: true,
+    },
+    {
+        id: 2,
+        number: '1234 12•• •••• 1235',
+        icon: '../assets/icons/visa.svg',
+        default: false,
+    },
+    {
+        id: 3,
+        number: '1234 12•• •••• 1236',
+        icon: '../assets/icons/mastercard.svg',
+        default: false,
+    },
+    {
+        id: 4,
+        number: '1234 12•• •••• 1237',
+        icon: '../assets/icons/maestro.svg',
+        default: false,
+    }
+]
