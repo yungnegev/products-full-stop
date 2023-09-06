@@ -43,10 +43,13 @@
                     <h1>Корзина</h1>
                     <div class="cart-item-container">
                         <div class="select-all">
-                            <button type="button" class="select-all__checkbox checkbox">
-                                <img src="./assets/icons/checkbox.svg" alt="checkbox-icon">
-                            </button>
-                            <span>Выбрать все</span>
+                            <div class="select-all__open">
+                                <button type="button" class="select-all__checkbox checkbox">
+                                    <img src="./assets/icons/checkbox.svg" alt="checkbox-icon">
+                                </button>
+                                <span>Выбрать все</span>
+                            </div>
+                            <div class="select-all__closed"></div>
                             <button id="toggle-cart" type="button" value="open">
                                 <img src="./assets/icons/arrowUp.svg" alt="arrow-icon">
                             </button>
@@ -57,7 +60,7 @@
                     </div>
                 </section>
 
-
+                <div class="separator"></div>
 
                 <section class="missing">
                     <div class="select-all">

@@ -4,6 +4,7 @@ import { decrement, increment } from './lib/counterOperations.js';
 import { updateTotals, updateTotalBtn, updateHeaderCart } from './lib/updateTotals.js';
 import { validateInputs } from './lib/formValidation.js';
 import { toggleCheckbox, toggleArrow } from './lib/checkboxToggle.js';
+import { updateSectionHeading, toggleSeparatorDiv } from './lib/minimizeSection.js';
 
 const attachEventListeners = () => {
     const decrementBtns = document.querySelectorAll('.counter button:first-child');
@@ -17,11 +18,14 @@ const attachEventListeners = () => {
     toggleCartBtn.addEventListener('click', (e) => {
         if (toggleCartBtn.value === 'open') {
             hideProducts();
+            updateSectionHeading('closed');
             toggleArrow(toggleCartBtn);
         } else {
             showProducts();
+            updateSectionHeading('open');
             toggleArrow(toggleCartBtn);
         }
+        toggleSeparatorDiv();
     })
 
     toggleMissingBtn.addEventListener('click', (e) => {
@@ -32,6 +36,7 @@ const attachEventListeners = () => {
             showMissing();
             toggleArrow(toggleMissingBtn)
         }
+        toggleSeparatorDiv();
     })
 
     decrementBtns.forEach((btn) => {
