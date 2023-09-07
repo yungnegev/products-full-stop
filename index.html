@@ -79,12 +79,12 @@
                     <section class="action-card action-card-delivery">
                         <div class="action-card__header">
                             <h2>Способ доставки</h2>
-                            <button>Изменить</button>
+                            <button type="button" id="open-address-modal-card">Изменить</button>
                         </div>
                         <div class="action-card__entry">
-                            <div class="card-entry-title">Пункт выдачи</div>
+                            <div class="card-entry-title address-type-display">Пункт выдачи</div>
                             <div class="card-entry-content">
-                                <p>Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+                                <p class="address-display">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
                                 <div class="delivery-rating">
                                     <img src="./assets/icons/star.svg" alt="star">
                                     <span>4.99</span>
@@ -204,12 +204,12 @@
                     </div>
                     <div class="checkout-delivery">
                         <div class="checkout__header">
-                            <h2>Доставка в пункт выдачи</h2>
-                            <button type="button" class="checkout-delivery__button">
+                            <h2 class="address-type-display">Доставка в пункт выдачи</h2>
+                            <button type="button" class="checkout-delivery__button" id="open-address-modal-checkout">
                                 <img src="./assets/icons/pencil.svg" alt="pencil-icon">
                             </button>
                         </div>
-                        <div class="checkout-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
+                        <div class="checkout-address address-display">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
                         <div class="checkout-delivery-date">5–8 фев</div>
                         <div class="checkout-delivery__modal">
                             <div>

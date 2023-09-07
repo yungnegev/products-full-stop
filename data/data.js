@@ -96,3 +96,34 @@ export const cards = [
         default: false,
     }
 ]
+
+
+export const homeAddresses = [
+    {
+        id: 1,
+        address: 'Бишкек, улица Табышалиева, 57',
+        default: true,
+        type: 'home',
+    },
+    {
+        id: 2,
+        address: 'Бишкек, улица Жукеева-Пудовкина, 77/1',
+        default: false,
+        type: 'home',
+    },
+    {
+        id: 3,
+        address: 'Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1',
+        default: false,
+        type: 'home',
+    }
+]
+
+export const deliveryPointAddresses = [
+    {
+        id: 1,
+        address: 'Бишкек, улица Табышалиева, 57',
+        default: false,
+        type: 'deliveryPoint',
+    }
+]

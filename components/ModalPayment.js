@@ -23,13 +23,13 @@ const createPaymentModal = () => {
 const createPaymentMethod = (container) => {
     return (container.innerHTML = cards.map((item) => {
         return `
-        <div class="modal-payment-method" data-id=${item.id}>
+        <div class="modal-payment-method" data-id=${item.id} data-type=${item.type}>
             <img src="./assets/icons/${item.default ? 'checkboxRound' : 'checkboxRoundEmpty'}.svg" alt="checkbox">
             <div class="modal-card-choice">
                 <div class="grey-bg-rounded">
                     <img src=${item.icon} alt="icon">
                 </div>
-                <div id="modal-card-number">${item.number}</div>
+                <div id="modal-card-number-${item.id}">${item.number}</div>
             </div>
         </div>    
         `;

@@ -7,7 +7,9 @@ import { toggleCheckbox, toggleArrow } from './lib/checkboxToggle.js';
 import { updateSectionHeading, toggleSeparatorDiv } from './lib/minimizeSection.js';
 import { updateSelectAllCheckbox } from './lib/updateSelectAllCheckbox.js';
 import { generatePaymentModal } from './components/ModalPayment.js';
+import { generateAddressModal } from './components/ModalAddress.js';
 import { selectPaymentOption, setPaymentOption } from './lib/paymentOptions.js';
+import { selectAddressOption, setAddressOption } from './lib/addressOptions.js';
 
 const attachEventListeners = () => {
     const decrementBtns = document.querySelectorAll('.counter button:first-child');
@@ -26,6 +28,14 @@ const attachEventListeners = () => {
     const changeCardBtn = document.querySelector('#change-card');
     const cardNumberDisplays = document.querySelectorAll('.card-number');
     const cardIcons = document.querySelectorAll('.card-icon');
+    const modalAddress = document.querySelector('.modal-address');
+    const openAddressModalBtn = document.querySelector('#open-address-modal-checkout');
+    const openAddressModalBtn2 = document.querySelector('#open-address-modal-card');
+    const closeAddressModalBtn = document.querySelector('#modal-address-close');
+    const addressOptions = document.querySelectorAll('.modal-address-option');
+    const changeAddressBtn = document.querySelector('#change-address');
+    const addressDisplays = document.querySelectorAll('.address-display');
+    const addressTypeDisplays = document.querySelectorAll('.address-type-display');
 
     toggleCartBtn.onclick = () => {
         if (toggleCartBtn.value === 'open') {
@@ -115,12 +125,6 @@ const attachEventListeners = () => {
         modalPayment.style.display = 'flex';
     }
 
-    window.onclick = (e) => {
-        if (e.target === modalPayment) {
-            modalPayment.style.display = 'none';
-        }
-    }
-
     paymentOptions.forEach((option) => {
         option.onclick = () => {
             selectPaymentOption(option, paymentOptions, changeCardBtn);
@@ -132,12 +136,47 @@ const attachEventListeners = () => {
         setPaymentOption(id, cardIcons, cardNumberDisplays);
         modalPayment.style.display = 'none';
     }
+
+    openAddressModalBtn.onclick = () => {
+        modalAddress.style.display = 'flex';
+    }
+
+    openAddressModalBtn2.onclick = () => {
+        modalAddress.style.display = 'flex';
+    }
+
+    closeAddressModalBtn.onclick = () => {
+        modalAddress.style.display = 'none';
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modalPayment) {
+            modalPayment.style.display = 'none';
+        }
+        if (e.target === modalAddress) {
+            modalAddress.style.display = 'none';
+        }
+    });
+
+    addressOptions.forEach((option) => {
+        option.onclick = () => {
+            selectAddressOption(option, addressOptions, changeAddressBtn);
+        }
+    });
+
+    changeAddressBtn.onclick = () => {
+        const id = changeAddressBtn.dataset.id;
+        const type = changeAddressBtn.dataset.type;
+        setAddressOption(id, type, addressDisplays, addressTypeDisplays);
+        modalAddress.style.display = 'none';
+    };
 }
 
 const init = () => {
     generateProducts()
     generateMissing()
     generatePaymentModal()
+    generateAddressModal()
     attachEventListeners();
 }
 
