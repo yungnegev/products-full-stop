@@ -31,14 +31,14 @@ export const generateProducts = () => {
                 <div class="cart-item__right">
                     <div class="counter-container">
                         <div class="counter">
-                            <button data-id=${product.id}>−</button>
+                            <button data-id=${product.id} id=db-${product.id}>−</button>
                             <span class="quantity-value" 
                                          id=c-${product.id} 
                                          data-remaining=${product.quantityRemaining}
                                          >
                                 ${product.innitialQuanitity}
                             </span>
-                            <button data-id=${product.id}>+</button>
+                            <button data-id=${product.id} id=ib-${product.id}>+</button>
                         </div>
                         ${product.quantityRemaining ? `<span class="remaining-stock">Осталось ${product.quantityRemaining} шт.</span>` : ''}
                         <div class="icon-tray">

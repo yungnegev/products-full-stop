@@ -1,6 +1,6 @@
 import { generateProducts, hideProducts, showProducts } from './components/CartItem.js';
 import { generateMissing, hideMissing, showMissing } from './components/MissingItem.js';
-import { decrement, increment } from './lib/counterOperations.js';
+import { decrement, increment, updateAllButtonsStyle } from './lib/counterOperations.js';
 import { updateTotals, updateTotalBtn, updateHeaderCart } from './lib/updateTotals.js';
 import { validateInputs } from './lib/formValidation.js';
 import { toggleCheckbox, toggleArrow } from './lib/checkboxToggle.js';
@@ -174,6 +174,7 @@ const attachEventListeners = () => {
 
 const init = () => {
     generateProducts()
+    updateAllButtonsStyle()
     generateMissing()
     generatePaymentModal()
     generateAddressModal()
