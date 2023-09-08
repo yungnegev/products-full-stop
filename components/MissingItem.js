@@ -26,9 +26,11 @@ export const generateMissing = () => {
 }
 
 export const hideMissing = () => {
+    const missingItems = document.querySelector('.missing-items');
     missingItems.style.display = 'none';
 }
 
 export const showMissing = () => {
+    const missingItems = document.querySelector('.missing-items');
     missingItems.style.display = 'flex';
 }
