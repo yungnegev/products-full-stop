@@ -997,6 +997,10 @@ button {
     font-weight: 700;
 }
 
+.modal-button-select button:last-child {
+    border: 2px solid var(--color-magenta);
+}
+
 .modal-subheading {
     font-size: 13px; 
     font-weight: 700;
@@ -1027,6 +1031,10 @@ button {
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.deliverypoint-address-options {
+    display: none;
 }
 
 .modal-address-option {
@@ -1062,3 +1070,4 @@ button {
     font-size: 16px;
     margin-top: -2px;
 }
+

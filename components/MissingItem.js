@@ -1,8 +1,7 @@
 import { missingProducts } from '../data/data.js';
 
-const missingItems = document.querySelector('.missing-items');
-
 export const generateMissing = () => {
+    const missingItems = document.querySelector('.missing-items');
     return (missingItems.innerHTML = missingProducts.map((product) => {
         return `
             <div class="missing-item">

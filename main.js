@@ -1,3 +1,7 @@
+import { generateHeader } from './components/Header.js';
+import { generateFooter } from './components/Footer.js';
+import { generateMain } from './components/CartMain.js';
+import { generateCheckout } from './components/Checkout.js';
 import { generateProducts, hideProducts, showProducts } from './components/CartItem.js';
 import { generateMissing, hideMissing, showMissing } from './components/MissingItem.js';
 import { decrement, increment, updateAllButtonsStyle } from './lib/counterOperations.js';
@@ -6,10 +10,17 @@ import { validateInputs } from './lib/formValidation.js';
 import { toggleCheckbox, toggleArrow } from './lib/checkboxToggle.js';
 import { updateSectionHeading, toggleSeparatorDiv } from './lib/minimizeSection.js';
 import { updateSelectAllCheckbox } from './lib/updateSelectAllCheckbox.js';
-import { generatePaymentModal } from './components/ModalPayment.js';
-import { generateAddressModal } from './components/ModalAddress.js';
-import { selectPaymentOption, setPaymentOption } from './lib/paymentOptions.js';
-import { selectAddressOption, setAddressOption } from './lib/addressOptions.js';
+import { generatePaymentModal, selectPaymentOption, setPaymentOption } from './components/ModalPayment.js';
+import { generateDeliverySection } from './components/SectionDelivery.js';
+import { generatePaymentSection } from './components/SectionPaymentOption.js';
+import { generateFormSection } from './components/SectionForm.js';
+import {
+  generateAddressModal,
+  setDeleieryPointAddresses,
+  setHomeAddresses,
+  selectAddressOption,
+  setAddressOption,
+} from './components/ModalAddress.js';
 
 const attachEventListeners = () => {
     const decrementBtns = document.querySelectorAll('.counter button:first-child');
@@ -36,6 +47,9 @@ const attachEventListeners = () => {
     const changeAddressBtn = document.querySelector('#change-address');
     const addressDisplays = document.querySelectorAll('.address-display');
     const addressTypeDisplays = document.querySelectorAll('.address-type-display');
+    const choseDeliveryPointBtn = document.querySelector('#choose-deliverypoint');
+    const choseCourrierBtn = document.querySelector('#chose-courrier');
+    const deliveryRating = document.querySelector('.delivery-rating');
 
     toggleCartBtn.onclick = () => {
         if (toggleCartBtn.value === 'open') {
@@ -167,17 +181,32 @@ const attachEventListeners = () => {
     changeAddressBtn.onclick = () => {
         const id = changeAddressBtn.dataset.id;
         const type = changeAddressBtn.dataset.type;
-        setAddressOption(id, type, addressDisplays, addressTypeDisplays);
+        setAddressOption(id, type, addressDisplays, addressTypeDisplays, deliveryRating);
         modalAddress.style.display = 'none';
     };
+
+    choseDeliveryPointBtn.onclick = () => {
+        setDeleieryPointAddresses(choseCourrierBtn, choseDeliveryPointBtn);
+    }
+
+    choseCourrierBtn.onclick = () => {
+        setHomeAddresses(choseCourrierBtn, choseDeliveryPointBtn);
+    }
 }
 
 const init = () => {
+    generateHeader()
+    generateMain()
+    generateCheckout()
     generateProducts()
     updateAllButtonsStyle()
     generateMissing()
+    generateDeliverySection()
+    generatePaymentSection()
+    generateFormSection()
     generatePaymentModal()
     generateAddressModal()
+    generateFooter()
     attachEventListeners();
 }
 
