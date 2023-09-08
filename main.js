@@ -21,6 +21,7 @@ import {
   selectAddressOption,
   setAddressOption,
 } from './components/ModalAddress.js';
+import { updateDeliveryItems } from './components/SectionDelivery.js';
 
 const attachEventListeners = () => {
     const decrementBtns = document.querySelectorAll('.counter button:first-child');
@@ -82,6 +83,7 @@ const attachEventListeners = () => {
             decrement(id);
             updateTotals();
             updateTotalBtn(isBtnToggled);
+            updateDeliveryItems();
         }
     });
 
@@ -92,11 +94,11 @@ const attachEventListeners = () => {
             increment(id);
             updateTotals();
             updateTotalBtn(isBtnToggled);
+            updateDeliveryItems();
         }
     })
 
     orderBtn.onclick = () => validateInputs();
-
 
     paymentCheckbox.onclick = () => {
         const toggle = toggleCheckbox(paymentCheckbox);
@@ -111,6 +113,7 @@ const attachEventListeners = () => {
             updateTotals();
             updateTotalBtn(isBtnToggled);
             updateSelectAllCheckbox(cartItemsCheckboxes, selectAllCheckbox);
+            updateDeliveryItems();
         }
     });
 
@@ -123,6 +126,7 @@ const attachEventListeners = () => {
                 updateTotals();
                 updateTotalBtn(isBtnToggled);
                 updateSelectAllCheckbox(cartItemsCheckboxes, selectAllCheckbox);
+                updateDeliveryItems();
             }
         })
     };
@@ -199,7 +203,6 @@ const init = () => {
     generateMain()
     generateCheckout()
     generateProducts()
-    updateAllButtonsStyle()
     generateMissing()
     generateDeliverySection()
     generatePaymentSection()
@@ -207,6 +210,7 @@ const init = () => {
     generatePaymentModal()
     generateAddressModal()
     generateFooter()
+    updateAllButtonsStyle()
     attachEventListeners();
 }
 

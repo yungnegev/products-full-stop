@@ -11,6 +11,7 @@
     --color-white: #fff;
     --color-text-translucent:  rgba(255, 255, 255, 0.70);
     --color-modal-background: rgba(0,0,0,0.5);
+    --box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
 @font-face {
@@ -644,6 +645,7 @@ button {
     line-height: 16px;
     color: var(--color-text-gray-2);
     transition: all 0.2s ease-in-out;
+    cursor: text;
 }
 
 .field-holder input:focus + label,
@@ -687,8 +689,8 @@ button {
     border-radius: 16px;
     background-color: var(--color-white);
     height: fit-content;
-    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
-    position: -webkit-sticky; /* Safari */
+    box-shadow: var(--box-shadow);
+    position: -webkit-sticky;
     position: sticky;
     top: 20px;  
 }

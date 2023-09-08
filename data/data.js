@@ -16,6 +16,11 @@ export const products = [
         address: 'Коледино WB',
         producer: 'OOO Вайлдберриз',
         innitialQuanitity: 1,
+        delivery : {
+            splitDelivery: false,
+            deliveryDates: ['5—6 февраля'],
+            deliveryCutoff: null,
+        }
     },
     {
         id: 2,
@@ -29,6 +34,11 @@ export const products = [
         address: 'Коледино WB',
         producer: 'OOO Мегапрофстиль',
         innitialQuanitity: 200,
+        delivery : {
+            splitDelivery: true,
+            deliveryDates: ['5—6 февраля','7—8 февраля'],
+            deliveryCutoff: [184, 16],
+        }
     },
     {
         id: 3,
@@ -42,6 +52,11 @@ export const products = [
         address: 'Коледино WB',
         producer: 'OOO Вайлдберриз',
         innitialQuanitity: 2,
+        delivery : {
+            splitDelivery: false,
+            deliveryDates: ['5—6 февраля'],
+            deliveryCutoff: null,
+        }
     },
 ]
 
