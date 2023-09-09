@@ -56,7 +56,13 @@ export const generateProducts = () => {
                             </span>
                             <span class="price-currency">сом</span>
                         </div>
-                        <p class="no-discount-price">${product.noDiscount}</p>
+                        <p 
+                         class="no-discount-price" 
+                         data-no-discount=${product.noDiscount}
+                         id=d-${product.id}
+                         >
+                         ${product.noDiscount * product.innitialQuanitity} сом
+                         </p>
                     </div>
                 </div>
             </div>`;

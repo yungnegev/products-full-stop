@@ -17,7 +17,7 @@ const createCheckout = () => {
             </li>
             <li class="rundown-item">
                 <span>Скидка</span>
-                <span>−200 985 сом</span>
+                <span id="total-discount-value">−200 985 сом</span>
             </li>
             <li class="rundown-item">
                 <span>Доставка</span>
