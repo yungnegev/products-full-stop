@@ -12,6 +12,7 @@
     --color-text-translucent:  rgba(255, 255, 255, 0.70);
     --color-modal-background: rgba(0,0,0,0.5);
     --box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    --box-shadow-tooltip: 0px 0px 1px 0px rgba(0, 0, 0, 0.30), 0px 2px 10px 0px rgba(0, 0, 0, 0.15); 
 }
 
 @font-face {
@@ -454,6 +455,7 @@ button {
     width: fit-content;
     text-align: end;
     position: relative;
+    cursor: pointer;
 }
 
 .no-discount-price::after {
@@ -1147,3 +1149,69 @@ button {
     margin-top: -2px;
 }
 
+/* Toopltips */
+
+.tooltip-producer {
+    display: relative;
+}
+
+.tooltip-producer-body {
+    position: absolute;
+    left: 148px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 11px;
+    padding-bottom: 13px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 280px;
+    height: 104px;
+    color: #000;
+    font-size: 13px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow-tooltip);
+    border-radius: 8px;
+}
+
+.tooltip-producer-body h2{
+    font-weight: 700; 
+    font-size: 13px;
+}
+
+.tooltip-producer:hover .tooltip-producer-body {
+    display: flex;
+}
+
+.tooltip-discount-body {
+    position: absolute;
+    display: none;
+    right: -10px;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 11px;
+    padding-bottom: 13px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 239px;
+    height: 64px;
+    color: #000;
+    font-size: 13px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow-tooltip);
+    border-radius: 8px;
+}
+
+.tooltip-discount-body div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.tooltip-discount-body div p:first-child {
+    color: var(--color-text-gray-2);
+}
+
+.tooltip-discount:hover .tooltip-discount-body {
+    display: flex;
+}

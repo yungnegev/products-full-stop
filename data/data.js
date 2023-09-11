@@ -14,7 +14,12 @@ export const products = [
         size: '58',
         img: img1,
         address: 'Коледино WB',
-        producer: 'OOO Вайлдберриз',
+        producer: {
+            name: 'OOO Вайлдберриз',
+            name2: 'OOO «ВАЙЛДБЕРРИЗ»',
+            ogrn: '5167746237148',
+            address: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34'
+        },
         innitialQuanitity: 1,
         delivery : {
             splitDelivery: false,
@@ -32,7 +37,12 @@ export const products = [
         size: null,
         img: img2,
         address: 'Коледино WB',
-        producer: 'OOO Мегапрофстиль',
+        producer: {
+            name: 'OOO Мегапрофстиль',
+            name2: 'OOO «МЕГАПРОФСТИЛЬ»',
+            ogrn: '5167746237148',
+            address: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34'
+        },
         innitialQuanitity: 200,
         delivery : {
             splitDelivery: true,
@@ -50,7 +60,12 @@ export const products = [
         size: null,
         img: img3,
         address: 'Коледино WB',
-        producer: 'OOO Вайлдберриз',
+        producer: {
+            name: 'OOO Вайлдберриз',
+            name2: 'OOO «ВАЙЛДБЕРРИЗ»',
+            ogrn: '5167746237148',
+            address: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34'
+        },
         innitialQuanitity: 2,
         delivery : {
             splitDelivery: false,

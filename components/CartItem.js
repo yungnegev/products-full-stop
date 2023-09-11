@@ -21,10 +21,15 @@ export const generateProducts = () => {
                         </div>
                         <p class="description-location">${product.address}</p>
                         <div class="description-company">
-                            <p>${product.producer}</p>
-                            <button>
+                            <p>${product.producer.name}</p>
+                            <div class="tooltip-producer">
                                 <img src="./assets/icons/info.svg" alt="info">
-                            </button>
+                                <div class="tooltip-producer-body">
+                                    <h2>${product.producer.name2}</h2>
+                                    <p>ОГРН: ${product.producer.ogrn}</p>
+                                    <p>${product.producer.address}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,13 +62,23 @@ export const generateProducts = () => {
                             </span>
                             <span class="price-currency">сом</span>
                         </div>
-                        <p 
-                         class="no-discount-price" 
+                        <div 
+                         class="no-discount-price tooltip-discount" 
                          data-no-discount=${product.noDiscount}
                          id=d-${product.id}
                          >
                          ${spacesForThousands(product.noDiscount * product.innitialQuanitity)} сом
-                         </p>
+                            <div class="tooltip-discount-body">
+                                <div>
+                                    <p>Скидка 55%</p>
+                                    <p>−300 сом</p>
+                                </div>
+                                <div>
+                                    <p>Скидка 10%</p>
+                                    <p>−30 сом</p>
+                                </div>
+                            </div>
+                         </div>
                     </div>
                 </div>
             </div>`;
