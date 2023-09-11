@@ -211,6 +211,7 @@ const init = () => {
     generateAddressModal()
     generateFooter()
     updateAllButtonsStyle()
+    updateTotals()
     attachEventListeners();
 }
 

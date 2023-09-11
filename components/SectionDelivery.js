@@ -35,7 +35,7 @@ const fillDeliveryImages = () => {
                 return `
                             <div class="card-image-container" data-splitdelivery="${product.delivery.splitDelivery}">
                                 <img src="${product.img}" alt="product">
-                                <div class="card-product-qty">${
+                                <div class="card-product-qty" style=${product.innitialQuanitity === 1 ? 'display:none' : ''}>${
                                   product.delivery.splitDelivery
                                     ? product.delivery.deliveryCutoff[index]
                                     : product.innitialQuanitity
@@ -153,4 +153,12 @@ export const updateDeliveryItems = () => {
         splitDeliveryQties[0].innerText = quantities[1];
         deliveryDates[1].style.display = 'none';
     }
+
+    cardQties.forEach((qty) => {
+        if (qty.innerHTML === '1') {
+            qty.style.display = 'none';
+        } else {
+            qty.style.display = 'inline-block';
+        }
+    });
 }

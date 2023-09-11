@@ -1,4 +1,5 @@
 import { products } from '../data/data.js';
+import { spacesForThousands } from '../lib/utils/utils.js';
 
 export const generateProducts = () => {
     const cartItems = document.querySelector('.cart-items');
@@ -52,7 +53,7 @@ export const generateProducts = () => {
                                   data-price=${product.price}
                                   style=${product.price * product.innitialQuanitity > 50000 ? `font-size:16px` : ''}  
                                   >
-                                ${product.price * product.innitialQuanitity}
+                                ${spacesForThousands(product.price * product.innitialQuanitity)}
                             </span>
                             <span class="price-currency">сом</span>
                         </div>
@@ -61,7 +62,7 @@ export const generateProducts = () => {
                          data-no-discount=${product.noDiscount}
                          id=d-${product.id}
                          >
-                         ${product.noDiscount * product.innitialQuanitity} сом
+                         ${spacesForThousands(product.noDiscount * product.innitialQuanitity)} сом
                          </p>
                     </div>
                 </div>
