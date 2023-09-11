@@ -31,7 +31,11 @@ const createAddressOptions = (container, items) => {
         return `
         <div class="modal-address-option" data-id=${item.id} data-type=${item.type}>
             <img src="./assets/icons/${item.default ? 'checkboxRound' : 'checkboxRoundEmpty'}.svg" alt="checkbox">
-            <div class="modal-address-text">${item.address}</div>
+            <div class="modal-address-text">${item.address} ${
+                item.type === 'deliveryPoint' 
+                    ? `<span class="modal-delivery-rating"><img src="./assets/icons/star.svg"> ${item.rating} <span style="color:gray">Пункт выдачи</span></span> `
+                    : ''
+            }</div>
             <button>
                 <img src="./assets/icons/bin.svg" alt="remove-address">
             </button>

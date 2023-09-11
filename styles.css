@@ -105,6 +105,7 @@ button {
     height: 48px;
     border: solid 1px var(--color-primary-faded);
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .logo-container {
@@ -136,6 +137,12 @@ button {
     border-radius: 36px;
     padding: 0px 20px; 
     align-items: center;
+    transition: all 150ms ease;
+}
+
+.search-bar:hover {
+    cursor: pointer;
+    background-color: #9f76c8;
 }
 
 .search-bar button {
@@ -311,6 +318,11 @@ button {
     padding-top: 12px;
 }
 
+.cart-item:hover .icon-tray{
+    visibility: visible;
+    opacity: 1;
+}
+
 .cart-item__left {
     display: flex;
     gap: 16px;
@@ -411,15 +423,32 @@ button {
 }
 
 .icon-tray {
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.5s linear;
+    opacity: 0;
     display: flex;
     justify-content: end;
     gap: 16px;
 }
 
-.icon-tray img:hover {
+.icon-tray img:last-child:hover {
     cursor: pointer;
-    color: var(--color-primary);
-    filter: invert(38%) sepia(45%) saturate(3883%) hue-rotate(338deg) brightness(94%) contrast(91%);
+    filter: invert(38%) 
+            sepia(45%) 
+            saturate(3883%) 
+            hue-rotate(338deg) 
+            brightness(94%) 
+            contrast(91%);
+}
+
+.icon-tray img:first-child:hover {
+    cursor: pointer;
+    filter: invert(23%) 
+            sepia(71%) 
+            saturate(6543%) 
+            hue-rotate(299deg) 
+            brightness(87%) 
+            contrast(101%);
 }
 
 .price-container {
@@ -454,8 +483,6 @@ button {
     border-bottom: var(--color-text-gray) 1px dashed;
     width: fit-content;
     text-align: end;
-    position: relative;
-    cursor: pointer;
 }
 
 .no-discount-price::after {
@@ -503,6 +530,11 @@ button {
     display: flex;
     justify-content: space-between;
     padding-top: 12px;
+}
+
+.missing-item:hover .icon-tray{
+    visibility: visible;
+    opacity: 1;
 }
 
 .missing-item__left {
@@ -850,11 +882,6 @@ button {
     line-height: 16px;
 }
 
-.green-underline {
-    color: #0CB477;
-    border-bottom: 1px dashed #c6e9e0;
-}
-
 .card-choice {
     display: flex;
     align-items: center;
@@ -1030,6 +1057,10 @@ button {
     color: var(--color-white);
 }
 
+.modal-payment-body > button:hover {
+    background-color: #e413c0;
+}
+
 
 .modal-address {
     display: none;
@@ -1051,7 +1082,7 @@ button {
     background-color: var(--color-white);
     border-radius: 16px;
     width: 500px;
-    height: 408px;
+    height: auto;
     padding: 22px;
     padding-bottom: 24px;
 }
@@ -1105,6 +1136,10 @@ button {
     color: var(--color-white);
 }
 
+.modal-address-body > button:hover {
+    background-color: #e413c0;
+}
+
 .modal-address-options {
     display: flex;
     flex-direction: column;
@@ -1123,6 +1158,10 @@ button {
     min-height: 36px;
 }
 
+.modal-address-option:last-child {
+    margin-bottom: 33px;
+}
+
 .modal-address-option img {
     width: 20px;
     height: 20px;
@@ -1131,12 +1170,17 @@ button {
 .modal-address-option > button {
     height: 20px !important;
     width: 20px !important;
+    margin-left: 20px;
 }
 
 .modal-address-option > button img:hover {
     cursor: pointer;
-    color: var(--color-primary);
-    filter: invert(38%) sepia(45%) saturate(3883%) hue-rotate(338deg) brightness(94%) contrast(91%);
+    filter: invert(38%) 
+            sepia(45%) 
+            saturate(3883%) 
+            hue-rotate(338deg) 
+            brightness(94%) 
+            contrast(91%);
 }
 
 .modal-address-text {
@@ -1147,8 +1191,17 @@ button {
     line-height: 24px; 
     font-size: 16px;
     margin-top: -2px;
+    width: 100%;
 }
 
+.modal-delivery-rating {
+    font-size: 13px; 
+}
+
+.modal-delivery-rating img {
+    width: 12px;
+    height: 12px;
+}
 /* Toopltips */
 
 .tooltip-producer {
@@ -1156,9 +1209,12 @@ button {
 }
 
 .tooltip-producer-body {
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.2s linear;
+    opacity: 0;
     position: absolute;
     left: 148px;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 8px;
     padding-top: 11px;
@@ -1180,12 +1236,21 @@ button {
 }
 
 .tooltip-producer:hover .tooltip-producer-body {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-discount {
+    position: relative;
+    cursor: pointer;
 }
 
 .tooltip-discount-body {
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.2s linear;
+    opacity: 0;
     position: absolute;
-    display: none;
+    display: flex;
     right: -10px;
     flex-direction: column;
     gap: 6px;
@@ -1213,5 +1278,41 @@ button {
 }
 
 .tooltip-discount:hover .tooltip-discount-body {
+    visibility: visible;
+    opacity: 1;
+}
+
+.green-underline {
+    color: #0CB477;
+    border-bottom: 1px dashed #c6e9e0;
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip-delivery-body {
+    visibility: hidden;
+    transition: visibility 0s, opacity 0.2s linear;
+    opacity: 0;
+    position: absolute;
     display: flex;
+    right: -28px;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 11px;
+    padding-bottom: 13px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 239px;
+    width: 288px; 
+    height: 56px;
+    color: #000;
+    font-size: 13px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow-tooltip);
+    border-radius: 8px;
+}
+
+.green-underline:hover .tooltip-delivery-body {
+    visibility: visible;
+    opacity: 1;
 }

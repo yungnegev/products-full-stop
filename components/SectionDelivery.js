@@ -77,7 +77,14 @@ const createDeliverySection = () => {
             <div>
                 <img src="./assets/icons/greenCheck.svg" alt="delivery">
             </div>
-            <div>Обратная доставка товаров на склад при отказе — <span class="green-underline">бесплатно</span></div>
+            <div>
+            <span>Обратная доставка товаров на склад при отказе — 
+            <span class="green-underline">
+                бесплатно
+                <div class="tooltip-delivery-body">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</div>
+            </span>
+            </span>
+            </div>
         </div>
     `;
 

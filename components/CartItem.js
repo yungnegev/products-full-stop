@@ -1,5 +1,5 @@
 import { products } from '../data/data.js';
-import { spacesForThousands } from '../lib/utils/utils.js';
+import { spacesForThousands, smallSpacesForThousands } from '../lib/utils/utils.js';
 
 export const generateProducts = () => {
     const cartItems = document.querySelector('.cart-items');
@@ -62,23 +62,25 @@ export const generateProducts = () => {
                             </span>
                             <span class="price-currency">сом</span>
                         </div>
+                        <div class="tooltip-discount">
                         <div 
-                         class="no-discount-price tooltip-discount" 
+                         class="no-discount-price" 
                          data-no-discount=${product.noDiscount}
                          id=d-${product.id}
                          >
-                         ${spacesForThousands(product.noDiscount * product.innitialQuanitity)} сом
-                            <div class="tooltip-discount-body">
-                                <div>
-                                    <p>Скидка 55%</p>
-                                    <p>−300 сом</p>
-                                </div>
-                                <div>
-                                    <p>Скидка 10%</p>
-                                    <p>−30 сом</p>
-                                </div>
-                            </div>
-                         </div>
+                         ${smallSpacesForThousands(product.noDiscount * product.innitialQuanitity)} сом
+                        </div>
+                        <div class="tooltip-discount-body">
+                        <div>
+                            <p>Скидка 55%</p>
+                            <p>−300 сом</p>
+                        </div>
+                        <div>
+                            <p>Скидка 10%</p>
+                            <p>−30 сом</p>
+                        </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>`;

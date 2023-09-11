@@ -1,6 +1,6 @@
-const img1 = '../assets/images/prod1.png'
-const img2 = '../assets/images/prod2.png'
-const img3 = '../assets/images/prod3.png'
+const img1 = './assets/images/prod1.png'
+const img2 = './assets/images/prod2.png'
+const img3 = './assets/images/prod3.png'
 
 
 export const products = [
@@ -152,8 +152,23 @@ export const homeAddresses = [
 export const deliveryPointAddresses = [
     {
         id: 1,
-        address: 'Бишкек, улица Табышалиева, 57',
+        address: 'г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1',
         default: false,
         type: 'deliveryPoint',
+        rating: '',
+    },
+    {
+        id: 2,
+        address: 'г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1',
+        default: false,
+        type: 'deliveryPoint',
+        rating: 4.99,
+    },
+    {
+        id: 3,
+        address: 'г. Бишкек, улица Табышалиева, д. 57',
+        default: false,
+        type: 'deliveryPoint',
+        rating: 4.99,
     }
 ]
