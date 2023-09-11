@@ -92,6 +92,7 @@ export const hideProducts = () => {
     cartItems.style.display = 'none';
 }
 
+
 export const showProducts = () => {
     const cartItems = document.querySelector('.cart-items');
     cartItems.style.display = 'flex';
