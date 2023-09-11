@@ -6,18 +6,18 @@ const createCheckout = () => {
     <div class="checkout-rundown">
         <div class="checkout-total">
             <h1>Итого</h1>
-            <div class="checkout-price"><span id="checkout-price-value">2 101 063</span><span class="small-som">сом</span></div>
+            <div class="checkout-price"><span id="checkout-price-value"></span><span class="small-som">сом</span></div>
         </div>
         <ul class="rundown-items">
             <li class="rundown-item">
                 <div>
-                    <span id="rundown-items-qty">203</span> <span>товара</span>
+                    <span id="rundown-items-qty"></span> <span>товара</span>
                 </div>
-                <span id="rundown-items-value">2 302 048 сом</span>
+                <span id="rundown-items-value"></span>
             </li>
             <li class="rundown-item">
                 <span>Скидка</span>
-                <span id="total-discount-value">−200 985 сом</span>
+                <span id="total-discount-value"></span>
             </li>
             <li class="rundown-item">
                 <span>Доставка</span>
@@ -40,7 +40,7 @@ const createCheckout = () => {
             </div>
             <div>
                 <span>Обратная доставка товаров на склад при отказе — 
-                <span class="green-underline">
+                <span class="green-underline tooltip-delivery">
                     бесплатно
                     <div class="tooltip-delivery-body">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</div>
                 </span>

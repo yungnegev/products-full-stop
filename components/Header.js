@@ -13,10 +13,10 @@ const createHeader = () => {
         </div>
     </div>
     <div class="navbar-items__center">
-        <div class="search-bar">
-                <input type="text" placeholder="Я ищу...">
+        <label class="search-bar" for="search-input">
+                <input type="text" id="search-input" placeholder="Я ищу...">
                 <button><img src="./assets/icons/search.svg" alt="search-icon"></button>
-        </div>
+        </label>
     </div>
     <div class="navbar-items__right">
         <div class="user-container">
@@ -33,9 +33,23 @@ const createHeader = () => {
     return header;
 }
 
+const attachHeaderEventListeners = () => {
+    const searchBar = document.querySelector('.search-bar');
+    const searchInput = document.querySelector('#search-input');
+
+    searchInput.addEventListener('focus', () => {
+        searchBar.classList.add('focused');
+    })
+
+    searchInput.addEventListener('blur', () => {
+        searchBar.classList.remove('focused');
+    })
+}
+
 
 export const generateHeader = () => {
     const app = document.querySelector('#app');
     const header = createHeader();
     app.appendChild(header);
+    attachHeaderEventListeners();
 }

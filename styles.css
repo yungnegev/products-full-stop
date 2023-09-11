@@ -145,6 +145,10 @@ button {
     background-color: #9f76c8;
 }
 
+.search-bar.focused {
+    background-color: #9f76c8;
+}
+
 .search-bar button {
     height: 24px;
 }
@@ -853,6 +857,7 @@ button {
 .checkout-address {
     font-size: 13px;
     margin-top: -2px;
+    padding-right: 16px;
 }
 
 .checkout-delivery-date {
@@ -1285,6 +1290,10 @@ button {
 .green-underline {
     color: #0CB477;
     border-bottom: 1px dashed #c6e9e0;
+}
+
+
+.tooltip-delivery {
     position: relative;
     cursor: pointer;
 }
@@ -1296,6 +1305,7 @@ button {
     position: absolute;
     display: flex;
     right: -28px;
+    bottom: 0px;
     flex-direction: column;
     gap: 6px;
     padding-top: 11px;

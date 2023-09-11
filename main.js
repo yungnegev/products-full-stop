@@ -119,17 +119,33 @@ const attachEventListeners = () => {
     });
 
     selectAllCheckbox.onclick = () => {
-        cartItemsCheckboxes.forEach((checkbox) => {
-            if (checkbox.value === 'off') {
-                toggleCheckbox(checkbox);
-                const isBtnToggled = paymentCheckbox.value === 'on';
-                updateHeaderCart();
-                updateTotals();
-                updateTotalBtn(isBtnToggled);
-                updateSelectAllCheckbox(cartItemsCheckboxes, selectAllCheckbox);
-                updateDeliveryItems();
-            }
-        })
+        const value = selectAllCheckbox.value;
+        if (value === 'off') {
+            cartItemsCheckboxes.forEach((checkbox) => {
+                if (checkbox.value === 'off') {
+                    toggleCheckbox(checkbox);
+                    const isBtnToggled = paymentCheckbox.value === 'on';
+                    updateHeaderCart();
+                    updateTotals();
+                    updateTotalBtn(isBtnToggled);
+                    updateSelectAllCheckbox(cartItemsCheckboxes, selectAllCheckbox);
+                    updateDeliveryItems();
+                }
+            })
+        }
+        if (value === 'on') {
+            cartItemsCheckboxes.forEach((checkbox) => {
+                if (checkbox.value === 'on') {
+                    toggleCheckbox(checkbox);
+                    const isBtnToggled = paymentCheckbox.value === 'on';
+                    updateHeaderCart();
+                    updateTotals();
+                    updateTotalBtn(isBtnToggled);
+                    updateSelectAllCheckbox(cartItemsCheckboxes, selectAllCheckbox);
+                    updateDeliveryItems();
+                }
+            })
+        }
     };
 
     modalPaymentCloseBtn.onclick = () => {

@@ -79,9 +79,9 @@ const createDeliverySection = () => {
             </div>
             <div>
             <span>Обратная доставка товаров на склад при отказе — 
-            <span class="green-underline">
+            <span class="green-underline tooltip-delivery">
                 бесплатно
-                <div class="tooltip-delivery-body">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</div>
+                <div class="tooltip-delivery-body tooltip-2">Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно</div>
             </span>
             </span>
             </div>
@@ -129,6 +129,7 @@ export const updateDeliveryItems = () => {
             deliveryItems[index].style.display = 'none';
         }
         if (cartItemsCheckboxes[index].value === 'on' && deliveryItems[index].dataset.splitdelivery === 'false') {
+            deliveryDates[0].style.display = 'flex';
             deliveryItems[index].style.display = 'flex';
             cardQties[index].innerText = qty;
         }
@@ -144,6 +145,7 @@ export const updateDeliveryItems = () => {
 
     if (splitDeliveryCheckbox.value === 'on') {
         splitDeliveryItems.forEach(item => item.style.display = 'flex')
+        deliveryDates[0].style.display = 'flex';
         deliveryDates[1].style.display = 'flex';
     }
 
