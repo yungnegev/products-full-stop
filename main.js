@@ -6,7 +6,7 @@ import { generateProducts, hideProducts, showProducts } from './components/CartI
 import { generateMissing, hideMissing, showMissing } from './components/MissingItem.js';
 import { decrement, increment, updateAllButtonsStyle } from './lib/counterOperations.js';
 import { updateTotals, updateTotalBtn, updateHeaderCart } from './lib/updateTotals.js';
-import { validateInputs } from './lib/formValidation.js';
+import { validateAllInputs } from './lib/formValidation.js';
 import { toggleCheckbox, toggleArrow } from './lib/checkboxToggle.js';
 import { updateSectionHeading, toggleSeparatorDiv } from './lib/minimizeSection.js';
 import { updateSelectAllCheckbox } from './lib/updateSelectAllCheckbox.js';
@@ -22,6 +22,7 @@ import {
   setAddressOption,
 } from './components/ModalAddress.js';
 import { updateDeliveryItems } from './components/SectionDelivery.js';
+import { validateInputEventListeners } from './lib/formValidation.js';
 
 const attachEventListeners = () => {
     const decrementBtns = document.querySelectorAll('.counter button:first-child');
@@ -98,7 +99,7 @@ const attachEventListeners = () => {
         }
     })
 
-    orderBtn.onclick = () => validateInputs();
+    orderBtn.onclick = () => validateAllInputs();
 
     paymentCheckbox.onclick = () => {
         const toggle = toggleCheckbox(paymentCheckbox);
@@ -213,6 +214,7 @@ const init = () => {
     updateAllButtonsStyle()
     updateTotals()
     attachEventListeners();
+    validateInputEventListeners();
 }
 
 init();
