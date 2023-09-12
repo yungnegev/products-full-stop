@@ -146,6 +146,7 @@ button {
     text-transform: lowercase;
     height: 36px;
     width: 196px;
+    white-space: nowrap;
 }
 
 .navbar-items__center {
@@ -1690,6 +1691,18 @@ button {
         left: 4px;
         border-radius: 6px;
     }
+    .fake-mobile-info{
+        display: inline-block;
+        padding-bottom: 3px;
+        padding-left: 4px;
+        padding-right: 4px;
+        position: absolute;
+        font-size: 14px;
+        background-color: #fff;
+        bottom: 4px;
+        left: 4px;
+        border-radius: 6px;
+    }
     .missing-size-display {
         display: none;
     }
@@ -1781,6 +1794,7 @@ button {
         flex-direction: column;
         gap: 16px;
         padding: 16px;
+        padding-bottom: 21px;
         padding-top: 0px;
         margin-top: -7px;
         background-color: var(--color-page-background);
@@ -1828,5 +1842,12 @@ button {
     }
     .modal-header h2 {
         font-weight: 600; 
+    }
+    .no-discount-price {
+        margin: 0;
+        margin-left: 1px;
+    }
+    .user-agreement img {
+        margin-top: -6px;
     }
 }

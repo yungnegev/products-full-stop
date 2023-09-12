@@ -83,6 +83,7 @@ export const missingProducts = [
         img: img1,
         color: 'Белый',
         size: '56',
+        mobileInfo: null,
     },
     {
         id: 2,
@@ -90,6 +91,7 @@ export const missingProducts = [
         img: img2,
         color: 'прозрачный',
         size: null,
+        mobileInfo: null,
     },
     {
         id: 3,
@@ -97,6 +99,7 @@ export const missingProducts = [
         img: img3,
         color: null,
         size: null,
+        mobileInfo: '56/54/52...',
     }
 ]
 

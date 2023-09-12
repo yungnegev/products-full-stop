@@ -11,7 +11,7 @@ const createCheckout = () => {
         <ul class="rundown-items">
             <li class="rundown-item">
                 <div>
-                    <span id="rundown-items-qty"></span> <span>товара</span>
+                    <span id="rundown-items-qty"></span> <span class="conjugate">товара</span>
                 </div>
                 <span id="rundown-items-value"></span>
             </li>

@@ -8,6 +8,7 @@ export const generateMissing = () => {
             <div class="missing-item__left">
                 <img src=${product.img} alt="missing-product">
                 ${product.size ? `<span class="missing-size-display-mobile">${product.size}</span>` : ''}
+                ${product.mobileInfo ? `<span class="fake-mobile-info">${product.mobileInfo}</span>` : ''}
                 <div class="missing-item__description">
                     <div class="missing-item__title">${product.title}</div>
                     <div class="missing-item__attributes">
