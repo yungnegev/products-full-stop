@@ -144,6 +144,8 @@ button {
     font-family: 'Segoe UI Caps', sans-serif;
     letter-spacing: 0.76px;
     text-transform: lowercase;
+    height: 36px;
+    width: 196px;
 }
 
 .navbar-items__center {
