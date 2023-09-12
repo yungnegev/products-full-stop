@@ -12,12 +12,13 @@ export const generateProducts = () => {
                             <img src="./assets/icons/checkbox.svg" alt="checkbox-icon">
                         </button>
                         <img src=${product.img} alt="item-image">
+                        ${product.size ? `<span class="item-size-display-mobile">${product.size}</span>` : ''}
                     </div>
                     <div class="cart-item__description">
                         <p>${product.title}</p>
                         <div class="description-attributes">
                             ${product.color ? `<span>Цвет: ${product.color}</span>` : ''}
-                            ${product.size ? `<span>Размер: ${product.size}</span>` : ''}
+                            ${product.size ? `<span class="item-size-display">Размер: ${product.size}</span>` : ''}
                         </div>
                         <p class="description-location">${product.address}</p>
                         <div class="description-company">

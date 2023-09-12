@@ -11,12 +11,18 @@ const createHeader = () => {
         <div class="logo-container">
             <span>Товары и точка</span>
         </div>
+        <div class="mobile-menu-container">
+            <button><img src="./assets/icons/mobileMenu.svg" alt="mobile-menu"></button>
+        </div>
     </div>
     <div class="navbar-items__center">
         <label class="search-bar" for="search-input">
                 <input type="text" id="search-input" placeholder="Я ищу...">
                 <button><img src="./assets/icons/search.svg" alt="search-icon"></button>
         </label>
+        <div class="mobile-logo-container">
+            <h1>Товары и точка</h1>
+        </div>
     </div>
     <div class="navbar-items__right">
         <div class="user-container">
@@ -27,6 +33,9 @@ const createHeader = () => {
             <button><img src="./assets/icons/cart.svg" alt="cart-icon"></button>
             <span>Корзина</span>
             <span class="cart-ammount" id="header-cart-qty">${products.length}</span>
+        </div>
+        <div class="mobile-search">
+            <button><img src="./assets/icons/mobileSearch.svg" alt="search-icon"></button>
         </div>
     </div>
     `

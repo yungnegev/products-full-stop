@@ -23,6 +23,7 @@ import {
 } from './components/ModalAddress.js';
 import { updateDeliveryItems } from './components/SectionDelivery.js';
 import { validateInputEventListeners } from './lib/formValidation.js';
+import { generateTaskBar } from './components/TaskBar.js';
 
 const attachEventListeners = () => {
     const decrementBtns = document.querySelectorAll('.counter button:first-child');
@@ -227,6 +228,7 @@ const init = () => {
     generatePaymentModal()
     generateAddressModal()
     generateFooter()
+    generateTaskBar()
     updateAllButtonsStyle()
     updateTotals()
     attachEventListeners();

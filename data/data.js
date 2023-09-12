@@ -11,7 +11,7 @@ export const products = [
         noDiscount:1051,
         quantityRemaining: 2,
         color: 'Белый',
-        size: '58',
+        size: '56',
         img: img1,
         address: 'Коледино WB',
         producer: {
@@ -82,7 +82,7 @@ export const missingProducts = [
         title: 'Футболка UZcotton мужская',
         img: img1,
         color: 'Белый',
-        size: '58',
+        size: '56',
     },
     {
         id: 2,

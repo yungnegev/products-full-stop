@@ -7,11 +7,12 @@ export const generateMissing = () => {
             <div class="missing-item">
             <div class="missing-item__left">
                 <img src=${product.img} alt="missing-product">
+                ${product.size ? `<span class="missing-size-display-mobile">${product.size}</span>` : ''}
                 <div class="missing-item__description">
                     <div class="missing-item__title">${product.title}</div>
                     <div class="missing-item__attributes">
                     ${product.color ? `<span>Цвет: ${product.color}</span>` : ''}
-                    ${product.size ? `<span>Размер: ${product.size}</span>` : ''}
+                    ${product.size ? `<span class="missing-size-display">Размер: ${product.size}</span>` : ''}
                     </div>
                 </div>
             </div>
