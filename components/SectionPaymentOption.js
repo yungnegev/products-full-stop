@@ -16,7 +16,7 @@ const createPaymentOptionCard = () => {
                 <div class="card-number">1234 56•• •••• 1234</div>
                 <span>01/30</span>
             </div>
-            <div class="text-gray-sm">Спишем оплату с карты при получении</div>
+            <div class="text-gray-sm remove-on-toggle">Спишем оплату с карты при получении</div>
         </div>
     `
     return section;

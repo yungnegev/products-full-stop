@@ -745,10 +745,22 @@ button {
 
 .form-container form {
     display: flex;
+    flex-direction: column;
     gap: 24px;
-    flex-wrap: wrap;
     margin-top: 22px;
     margin-bottom: 2px;
+}
+
+.form-upper,
+.form-lower {
+    display: flex;
+    gap: 24px;
+    flex-wrap: nowrap;
+}
+
+.form-upper .field-holder {
+    max-width: 338px;
+    width: 100%;
 }
 
 .field-holder {
@@ -785,12 +797,9 @@ button {
     line-height: 13px;
 }
 
-.field-holder:nth-child(1),
-.field-holder:nth-child(2) {
-    width: 338px;
-}
-
 .form-error {
+    position: absolute;
+    bottom: -20px;
     color: var(--color-orange);
     font-size: 12px;
     line-height: 16px;
@@ -800,6 +809,18 @@ button {
 .input-error {
     border-bottom: solid 1px var(--color-orange) !important;
     color: var(--color-orange) !important;
+}
+
+.inn-field-holder {
+    position: relative;
+}
+
+.inn-additional-info {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    top: 29px;
 }
 
 /* Checkout */
@@ -950,12 +971,17 @@ button {
     gap: 8px;
 }
 
+.instant-pay span {
+    line-height: 16px;
+}
+
 .instant-pay > button{
     width: 22px !important;
     height: 22px;
 }
 
 .checkout-button {
+    margin-top: -1px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -984,12 +1010,19 @@ button {
 
 .user-agreement span {
     font-size: 13px;
+    line-height: 16px;
 }
 
 .user-agreement img {
     width: 13px;
     margin-top: -10px;
     margin-right: 8px;
+}
+
+.underline-pointer {
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 0, 0, 0.10);
+    cursor: pointer;
 }
 
 /* Footer */
@@ -1324,7 +1357,6 @@ button {
     border-bottom: 1px dashed #c6e9e0;
 }
 
-
 .tooltip-delivery {
     position: relative;
     cursor: pointer;
@@ -1336,8 +1368,8 @@ button {
     opacity: 0;
     position: absolute;
     display: flex;
-    right: -28px;
-    bottom: 0px;
+    right: -30px;
+    top: 20px;
     flex-direction: column;
     gap: 6px;
     padding-top: 11px;
@@ -1352,6 +1384,11 @@ button {
     background-color: #fff;
     box-shadow: var(--box-shadow-tooltip);
     border-radius: 8px;
+}
+
+.tooltip-delivery-body.tooltip-2 {
+    left: -100px;
+    top: 22px;
 }
 
 .green-underline:hover .tooltip-delivery-body {
@@ -1393,6 +1430,10 @@ button {
 }
 
 /* Media querries */
+
+@media screen and (max-width: 1200px) {
+
+}
 
 @media screen and (max-width: 1000px) {
     .main {
@@ -1726,8 +1767,13 @@ button {
     .field-holder {
         width: 100%;
     }
-    .field-holder:nth-child(1),
-    .field-holder:nth-child(2) {
+    .form-upper,
+    .form-lower {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .form-upper .field-holder {
+        max-width: 100%;
         width: 100%;
     }
     .checkout {

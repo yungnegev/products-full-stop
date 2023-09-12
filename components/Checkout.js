@@ -68,14 +68,14 @@ const createCheckout = () => {
                 </button>
                 <span>Списать оплату сразу</span>
             </div>
-            <div>Спишем оплату с карты при получении</div>
+            <div class="remove-on-toggle">Спишем оплату с карты при получении</div>
         </div>
     </div>
     <div class="checkout-button">
         <button id="order" type="button"><span>Заказать</span></button>
         <div class="user-agreement">
             <img src="./assets/icons/checkmark.svg">
-            <span>Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
+            <span>Соглашаюсь с <span class="underline-pointer">правилами пользования торговой площадкой</span> и <span class="underline-pointer">возврата</span></span>
         </div>
     </div>
     `
