@@ -1430,6 +1430,10 @@ button {
     top: -4px;
 }
 
+.fake-mobile-info {
+    display: none;
+}
+
 /* Media querries */
 
 @media screen and (max-width: 1200px) {
